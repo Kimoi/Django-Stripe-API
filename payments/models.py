@@ -9,3 +9,13 @@ class Item(models.Model):
 
     def get_absolute_url(self):
         return reverse("get_item", args=[self.pk])
+
+    def __str__(self):
+        return f"{self.name}"
+
+
+class Order(models.Model):
+    items = models.ManyToManyField(Item)
+
+    def get_absolute_url(self):
+        return reverse("get_order", args=[self.pk])
