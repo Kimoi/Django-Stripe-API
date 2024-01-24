@@ -8,7 +8,6 @@ from django.http import JsonResponse
 from . import services
 from .models import Item, Order
 from rest_framework.generics import ListAPIView
-
 from .serializers import ItemSerializer
 
 
