@@ -7,6 +7,9 @@ from rest_framework.decorators import api_view
 from django.http import JsonResponse
 from . import services
 from .models import Item, Order
+from rest_framework.generics import ListAPIView
+
+from .serializers import ItemSerializer
 
 
 @api_view()
@@ -45,3 +48,8 @@ def get_order(request, pk):
 class SuccessView(View):
     def get(self, request):
         return render(request, 'payments/success.html', status=200)
+
+
+class ItemListView(ListAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer

@@ -62,9 +62,13 @@ WSGI_APPLICATION = 'djangoStripe.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": config('DB_ENGINE'),
+        "NAME": config('DB_NAME'),
+        "USER": config('POSTGRES_USER'),
+        "PASSWORD": config('POSTGRES_PASSWORD'),
+        "HOST": config('DB_HOST'),  # set in docker-compose.yml
+        "PORT": config('DB_PORT'),  # default postgres port
     }
 }
 
