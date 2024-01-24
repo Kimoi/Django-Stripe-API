@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config('DEBUG', cast=bool, default=False)
 
 ALLOWED_HOSTS = []
 
@@ -63,12 +63,12 @@ WSGI_APPLICATION = 'djangoStripe.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": config('DB_ENGINE'),
-        "NAME": config('DB_NAME'),
-        "USER": config('POSTGRES_USER'),
-        "PASSWORD": config('POSTGRES_PASSWORD'),
-        "HOST": config('DB_HOST'),  # set in docker-compose.yml
-        "PORT": config('DB_PORT'),  # default postgres port
+        "ENGINE": config('DB_ENGINE', default="django.db.backends.postgresql"),
+        "NAME": config('DB_NAME', default="postgres"),
+        "USER": config('POSTGRES_USER', default="postgres"),
+        "PASSWORD": config('POSTGRES_PASSWORD', default="postgres"),
+        "HOST": config('DB_HOST', default="db"),  # set in docker-compose.yml
+        "PORT": config('DB_PORT', default="5432"),  # default postgres port
     }
 }
 
