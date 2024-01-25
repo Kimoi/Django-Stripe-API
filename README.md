@@ -17,22 +17,21 @@
 
 - Clone repo
 - Create `.env` file in `manage.py` directory
-- Copy the code up next and fill it with your own data
+- Copy the code up next and fill it with your own data. You may wipe
+the whole "DB" section to use default values
 
 ```bash
-SECRET_KEY = YOUR_DATA_HERE
-DEBUG = AND_HERE
+SECRET_KEY = YOUR_DATA_HERE_IS_MUST
 
-STRIPE_PUBLISHABLE_KEY = AND_HERE
-STRIPE_SECRET_KEY = AND_HERE
+STRIPE_PUBLISHABLE_KEY = YOUR_DATA_HERE_IS_MUST
+STRIPE_SECRET_KEY = YOUR_DATA_HERE_IS_MUST
 
-DB_ENGINE = AND_HERE
-DB_NAME = 'AND_HERE_BUT_IN_QUOTES'
-POSTGRES_USER = 'IN_QUOTES_ALSO'
-POSTGRES_PASSWORD = 'THE_LAST_ONE_WITH_QUOTES'
-DB_HOST = YOUR_DATA_HERE
-DB_PORT = AND_HERE
-YOU_ARE = 'AMAZING!'
+DB_ENGINE = 
+DB_NAME = ''
+POSTGRES_USER = ''
+POSTGRES_PASSWORD = ''
+DB_HOST = 
+DB_PORT = 
 ```
 
 - Next up - we spin up the container
