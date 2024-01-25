@@ -3,7 +3,7 @@
 
 **Integrating a payment system in Django using Stripe**
 
-## We Did It List:
+## Done:
 
 - Item model
 - GET /buy/{id}
@@ -40,7 +40,11 @@ DB_PORT =
 docker-compose up -d --build
 ```
 
-- Migrate tables
+- Make migrations and apply them
+
+```commandline
+docker-compose exec web python manage.py makemigrations
+```
 
 ```commandline
 docker-compose exec web python manage.py migrate
@@ -51,5 +55,3 @@ docker-compose exec web python manage.py migrate
 ```commandline
 docker-compose exec web python manage.py createsuperuser
 ```
-
-- YOU ARE AMAZING! &#9889;
